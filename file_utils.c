@@ -1,6 +1,7 @@
 #include "file_utils.h"
 #include <sys/stat.h>
 #include <stdlib.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 int read_file( char* filename, char **buffer ){
@@ -40,12 +41,12 @@ int read_file( char* filename, char **buffer ){
 		int status = 1;
 
 		if(output_file){
-			for(int index = 0; index <size; ++index){
+			for(int index = 0; index < size; ++index){
 				fputc(buffer[index], output_file);
 			}
 		}
 		else {
-				status = -1;
+			status = -1;
 		}
 
 		fclose(output_file);

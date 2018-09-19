@@ -39,16 +39,16 @@ int main (int argc, char** argv) {
 }
 
 void reverse_text(char** contents, int file_size) {
-	char* reversed_contents = (char*) 
-		malloc((file_size - 1) * sizeof(char));
+	char* reversed_contents =
+	       	(char*) malloc((file_size-1) * sizeof(char));
 
-	for( int index = file_size - 1; index >= 0; index-- ) {
-		*(reversed_contents + file_size - 1 - index) 
-			= *(*contents + index);
+	for( int index = file_size-1; index >= 0; index-- ) {
+		*(reversed_contents + file_size - 1 - index) = 
+		*(*contents + index);
 	}
 
-	free(contents);
+	free(*contents);
 
-	*contents = reversed_contents
+	*contents = reversed_contents;
 }
 
